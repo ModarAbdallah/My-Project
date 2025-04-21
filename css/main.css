@@ -1,0 +1,138 @@
+*{
+    box-sizing:border-box;
+}
+:root{
+    --primary-color:#f44336;
+    --wrong-color:red;
+    --correct-color:green;
+    --not-place-color:yellow;
+}
+body{
+    margin:0;
+    background-color: #eee;
+}
+h1{
+    text-align: center;
+    padding:20px;
+    margin:0 0 50px;
+    background-color: white;
+}
+.guess-game{
+    text-align:center;
+    width:1000px;
+    margin:20px auto;
+    display:flex;
+    align-items:flex-start;
+    justify-content: space-between;
+
+    .game-area{
+        > div{
+            margin-bottom:20px;
+            display:flex;
+            align-items:center;
+            flex-direction:column;
+            justify-content:space-between;
+            span{
+                font-size:30px;
+                margin-right:10px;
+                font-weight:bold;
+            }
+        }
+        .disabled-inputs{
+            opacity:0.3;
+            pointer-events:none;
+        }
+        input{
+            width:50px;
+            height:50px;
+            text-align:center;
+            font-size:40px;
+            margin:0 15px;
+            caret-color: var(--primary-color);
+            background-color:white;
+            border:none;
+            border-bottom: solid #777 2px;
+            &.focus{
+                caret-color: #777;
+            }
+            &.in-place{
+                background-color:var(--correct-color);
+                border-color:var(--correct-color);
+                color:white;
+            }
+            &.not-in-place{
+                background-color:var(--not-place-color);      
+                border-color:var(--not-place-color);
+                color:white;             
+            }
+            &.wrong{
+                background-color:var(--wrong-color);
+                border-color:var(--wrong-color);
+                color:white;
+            }
+        }
+    }
+    .key-colors{
+        .key-color{
+            display: flex;
+            width:100%;
+            flex:1;
+            align-items: center;
+            background-color:white;
+            margin-bottom:10px;
+            padding:15px;
+            .key{
+                width:25px;
+                height:25px;
+                padding:10px;
+                margin-bottom:10px;
+                border-radius:50%;
+                border:solid 3px black;
+                margin-right:10px;
+                &.in-place{
+                    background-color:var(--correct-color);
+                }
+                &.not-in-place{
+                    background-color:var(--not-place-color);                    
+                }
+                &.wrong{
+                    background-color:var(--wrong-color);
+                }
+            }
+        }
+    }
+}
+.control{
+    display:flex;
+    align-items: center;
+    
+    .check{
+    background-color:var(--primary-color);
+    padding: 14px;
+    width: 155px;
+    font-size: large;
+
+    }
+    .message{
+        text-align:center;
+        font-size:large;
+        margin:15px;
+        color:#777;
+        span{
+            color:#f44336;
+            font-size:calc(100%+10px);
+    
+        }
+    }
+}
+footer{
+    background-color:rgb(66, 58, 58);
+    height:fit-content;
+    padding:10px;
+    color:white;
+    text-align:center;
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    margin: auto;;
+}
